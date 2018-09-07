@@ -16,7 +16,7 @@ const NavBar = props => {
           <React.Fragment>
           <h5 className='item'>Welcome {props.currentUser.username}</h5>
           <a className="item">
-            <div className="ui button">
+            <div className="ui button" onClick={props.handleLogout}>
               Logout
             </div>
           </a>

@@ -28,7 +28,7 @@ class Login extends React.Component {
     fetchLoginUser(this.state.fields)
     .then(resp => {
       this.props.handleLogin(resp.user)
-      localStorage.setItem('token', resp.user.id)
+      localStorage.setItem('token', resp.jwt)
     })
   };
 

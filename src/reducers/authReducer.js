@@ -2,10 +2,11 @@ import { LOGIN_USER, LOGOUT_USER, TOGGLE_AUTHENTICATING  } from '../actions/type
 
 
 const initialState = {
+  authenticating: true,
   currentUser: {}
 }
 
-const exampleReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type){
 
     case LOGIN_USER:
@@ -18,9 +19,10 @@ const exampleReducer = (state = initialState, action) => {
       currentUser: {}
     }
 
-    // case TOGGLE_AUTHENTICATING:
-    // return {
-    // }
+    case TOGGLE_AUTHENTICATING:
+    return {
+      authenticating: !state.authenticating
+    }
 
     default:
     return state
@@ -28,4 +30,4 @@ const exampleReducer = (state = initialState, action) => {
   }
 }
 
-export default exampleReducer
+export default authReducer
